@@ -26,9 +26,8 @@ public class Main {
     public static String INVALID_TYPE = "INVALID";
     public static String CSV_HEADER = "Y-Koordinate;X-Koordinaten;Anzeigetext;Typ;Durchfluss;Kategorie";
 
-
-    public static void main(String[] args) throws ParserConfigurationException, IOException, SAXException {
-
+    public static void main(String[] args)
+    {
         if (args.length != 1) {
             System.out.println("ERROR: Usage: WasserkarteKml2Fe2Csv.jar inputFile.kms");
             return;
@@ -46,8 +45,29 @@ public class Main {
             return;
         }
 
-        String kml = new String(Files.readAllBytes(inputFilePath));
+        try {
+            String kml = new String(Files.readAllBytes(inputFilePath));
 
+            String result = convertToCsv(kml);
+
+            String csvFileName = inputFile.replaceAll("\\.kml", ".csv");
+
+            try (Writer writer = new BufferedWriter(new OutputStreamWriter(
+                    new FileOutputStream(csvFileName), StandardCharsets.US_ASCII))) {
+                writer.write(result);
+            }
+
+            System.out.println("DONE! Check " + csvFileName + " for result");
+        }
+        catch (Exception e) {
+            StringWriter sw = new StringWriter();
+            PrintWriter pw = new PrintWriter(sw);
+            e.printStackTrace(pw);
+            System.out.println(sw.toString());
+        }
+    }
+
+    public static String convertToCsv(String kml) throws ParserConfigurationException, IOException, SAXException {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
 
@@ -55,7 +75,6 @@ public class Main {
         Document doc = builder.parse(input);
 
         List<String> hydranten = new ArrayList<>();
-
 
         Element root = doc.getDocumentElement();
         NodeList placemarks = root.getElementsByTagName("Placemark");
@@ -71,8 +90,7 @@ public class Main {
                 if ("name".equalsIgnoreCase(element.getNodeName())) {
                     name = element.getTextContent().trim();
                     if (name.contains(";")) {
-                        System.out.println("ERROR: Found semicolon in hydrant name: " + name);
-                        return;
+                        throw new RuntimeException("ERROR: Found semicolon in hydrant name: " + name);
                     }
                 }
                 else if ("description".equalsIgnoreCase(element.getNodeName())) {
@@ -111,8 +129,7 @@ public class Main {
             csvLine = csvLine.replaceAll("ß", "ss");
 
             if (!isPureAscii(csvLine)) {
-                System.out.println("ERROR: Found non-ascii in: " + csvLine);
-                return;
+                throw new RuntimeException("ERROR: Found non-ascii in: " + csvLine);
             }
 
             if (!csvLine.contains(INVALID_TYPE)) {
@@ -122,16 +139,9 @@ public class Main {
 
         String finalCsvContent =
                 CSV_HEADER + System.lineSeparator()
-                + String.join(System.lineSeparator(), hydranten).trim();
+                        + String.join(System.lineSeparator(), hydranten).trim();
 
-        String csvFile = inputFile.replaceAll(".kml", ".csv");
-
-        try (Writer writer = new BufferedWriter(new OutputStreamWriter(
-                new FileOutputStream(csvFile), StandardCharsets.US_ASCII))) {
-            writer.write(finalCsvContent);
-        }
-
-        System.out.println("DONE! Check " + csvFile);
+        return finalCsvContent;
     }
 
     public static boolean isPureAscii(String v) {
