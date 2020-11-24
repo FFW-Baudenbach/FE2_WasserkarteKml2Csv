@@ -6,6 +6,8 @@ The benefit is, that FE2 could store them offline, so that the new aMobile Pro a
 It will transform the coordinates, the type and the name.  
 In addition it ensures, that only valid ASCII signs are used. It will replace common german symbols like ä,ö,ü,ß.
 
+![Alt text](/Screenshot_aMobilePro.png?raw=true "Optional Title")
+
 ### Example
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
