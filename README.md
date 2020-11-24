@@ -66,4 +66,4 @@ This file you can in the next step upload as *Ebene* in FE2 (Webinterface > Obje
 * Thereby the field *Kategorie* cannot be filled meaningful (Default: 96 = GREEN)
 * Alamos only supports above- and below ground hydrants. Others will be excluded and just logged
 * If there are other non-ascii symbols than äöüß, program will terminate
-* The tool itself is developed quick-and-dirty :)
+* The tool itself is developed quick-and-dirty :relaxed:
