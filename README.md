@@ -1,7 +1,7 @@
 # WasserkarteKml2Fe2Csv
 
 ### General information
-Convert a KML file, exported from [Wasserkarte.info](https://www.wasserkarte.info/) to a CSV File which is compatible to Alamos FE2 (see [documentation](https://alamos-support.atlassian.net/wiki/spaces/documentation/pages/647397380/Ebenen#Hydranten-%C3%BCber-CSV-Import).  
+Convert a KML file, exported from [Wasserkarte.info](https://www.wasserkarte.info/) to a CSV File which is compatible to Alamos FE2 (see [documentation](https://alamos-support.atlassian.net/wiki/spaces/documentation/pages/647397380/Ebenen#Hydranten-%C3%BCber-CSV-Import)).  
 The benefit is, that FE2 could store them offline, so that the new aMobile Pro application could show all hydrants alongside the ones with pretty picture from Wasserkarte.info.  
 It will transform the coordinates, the type and the name.  
 In addition it ensures, that only valid ASCII signs are used. It will replace common german symbols like ä,ö,ü,ß.
