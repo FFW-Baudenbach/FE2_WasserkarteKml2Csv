@@ -56,7 +56,7 @@ Y-Koordinate;X-Koordinaten;Anzeigetext;Typ;Durchfluss;Kategorie
   ```java --version```
 * Download KML file from [Wasserkarte.info](https://portal.wasserkarte.info/exporter/export/overview) and place into the same folder as the tool.  
   Name it for example *hydranten.kml*
-* Execute following command from the directory where you downloaded the kml and jar files. Adapt the filename if necessary. 
+* Execute following command from the directory where you downloaded the kml and jar files. Adapt the filename if necessary.  
   ```java -jar WasserkarteKml2Fe2Csv.jar hydranten.kml```
 * Look into the directory, there you should have a new file being *hydranten.csv*
 
