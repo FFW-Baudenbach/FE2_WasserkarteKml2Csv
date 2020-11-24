@@ -1,12 +1,12 @@
 # WasserkarteKml2Fe2Csv
 
-###General information
+##General information
 Convert a KML file, exported from Wasserkarte.info to a CSV File which is compatible to Alamos FE2.  
 The benefit is, that FE2 could store them offline, so that the new aMobile Pro application could show all hydrants alongside the ones with pretty picture from Wasserkarte.info.  
 It will transform the coordinates, the type and the name.  
 In addition it ensures, that only valid ASCII signs are used. It will replace common german symbols like ä,ö,ü,ß.
 
-###Example
+##Example
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2">
@@ -48,7 +48,7 @@ Y-Koordinate;X-Koordinaten;Anzeigetext;Typ;Durchfluss;Kategorie
 10.5361927;49.6234328;Baudenbach, Feuerwehrhaus (# 101);O;0;96
 10.5361173;49.6231482;Baudenbach, Feuerwehrhaus (# 122);U;0;96
 ```
-###Usage
+##Usage
 * Download *WasserkarteKml2Fe2Csv.jar* from this Repository
 * Ensure you have a running Java 8 installation (or higher)  
   ```java --version```
@@ -60,7 +60,7 @@ Y-Koordinate;X-Koordinaten;Anzeigetext;Typ;Durchfluss;Kategorie
 
 This file you can in the next step upload as *Ebene* in FE2 (Webinterface > Objekte > Ebenen)
 
-###Restrictions
+##Restrictions
 
 * The kml file does not include *Durchfluss* (Default: 0)
 * Thereby the field *Kategorie* cannot be filled meaningful (Default: 96 = GREEN)
