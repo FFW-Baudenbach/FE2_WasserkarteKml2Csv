@@ -1,3 +1,6 @@
+package WasserkarteKml2Fe2Csv;
+
+import WasserkarteKml2Fe2Csv.Main;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.xml.sax.SAXException;
