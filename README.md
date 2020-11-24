@@ -49,12 +49,12 @@ Y-Koordinate;X-Koordinaten;Anzeigetext;Typ;Durchfluss;Kategorie
 10.5361173;49.6231482;Baudenbach, Feuerwehrhaus (# 122);U;0;96
 ```
 ### Usage
-* Download *WasserkarteKml2Fe2Csv.jar* from this Repository
+* Download ![WasserkarteKml2Fe2Csv.jar](/WasserkarteKml2Fe2Csv.jar?raw=true "WasserkarteKml2Fe2Csv.jar")
 * Ensure you have a running Java 8 installation (or higher)  
   ```java --version```
 * Download KML file from [Wasserkarte.info](https://portal.wasserkarte.info/exporter/export/overview) and place into the same folder as the tool.  
   Name it for example *hydranten.kml*
-* Execute following command  
+* Execute following command from the directory where you downloaded the kml and jar files. Adapt the filename if necessary. 
   ```java -jar WasserkarteKml2Fe2Csv.jar hydranten.kml```
 * Look into the directory, there you should have a new file being *hydranten.csv*
 
