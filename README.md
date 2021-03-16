@@ -51,7 +51,7 @@ Y-Koordinate;X-Koordinaten;Anzeigetext;Typ;Durchfluss;Kategorie
 10.5361173;49.6231482;Baudenbach, Feuerwehrhaus (# 122);U;0;96
 ```
 ### Usage
-* Download ![WasserkarteKml2Fe2Csv.jar](/WasserkarteKml2Fe2Csv.jar?raw=true "WasserkarteKml2Fe2Csv.jar")
+* Download latest ![WasserkarteKml2Fe2Csv.jar](https://github.com/odin568/FE2_WasserkarteKml2Csv/releases)
 * Ensure you have a running Java 8 installation (or higher)  
   ```java --version```
 * Download KML file from [Wasserkarte.info](https://portal.wasserkarte.info/exporter/export/overview) and place into the same folder as the tool.  
