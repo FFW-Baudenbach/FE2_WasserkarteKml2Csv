@@ -6,7 +6,7 @@ repositories {
 }
 
 // To ensure best possible compatibility
-sourceCompatibility = JavaVersion.VERSION_1_8
+sourceCompatibility = JavaVersion.VERSION_11
 
 dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.7.1")
