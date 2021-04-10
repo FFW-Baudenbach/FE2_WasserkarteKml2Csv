@@ -5,8 +5,11 @@ repositories {
     mavenCentral()
 }
 
-// To ensure best possible compatibility
-sourceCompatibility = JavaVersion.VERSION_11
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(8)
+    }
+}
 
 dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.7.1")
@@ -16,7 +19,6 @@ dependencies {
 jar {
     manifest {
         attributes(
-                'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
                 'Main-Class': 'WasserkarteKml2Fe2Csv.Main'
         )
     }
