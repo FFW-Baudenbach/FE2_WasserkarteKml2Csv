@@ -19,7 +19,7 @@ dependencies {
 jar {
     manifest {
         attributes(
-                'Main-Class': 'WasserkarteKml2Fe2Csv.Main'
+                'Main-Class': 'WasserkarteKml2Csv.Main'
         )
     }
 }
