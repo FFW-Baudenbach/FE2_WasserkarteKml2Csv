@@ -55,19 +55,19 @@ This csv can be used to import the data in there using tools like [JOSM](https:/
 </Document>
 </kml>
 ```
-will be transformed to either Alamos format
+will be transformed to Alamos format...
 ```csv
 Y-Koordinate;X-Koordinaten;Anzeigetext;Typ;Durchfluss;Kategorie
 10.5361927;49.6234328;Baudenbach, Feuerwehrhaus (# 101);O;0;96
 10.5361173;49.6231482;Baudenbach, Feuerwehrhaus (# 122);U;0;96
 ```
-or excel format
+... excel format
 ```csv
 Nr;Name;Typ
 101;Baudenbach, Feuerwehrhaus;Überflurhydrant
 122;Baudenbach, Feuerwehrhaus;Unterflurhydrant
 ```
-or openfiremap format
+and openfiremap format
 ```csv
 emergency;longitude;latitude;fire_hydrant:type;fire_hydrant:pressure
 fire_hydrant;10.5361927;49.6234328;pillar;yes
@@ -82,9 +82,10 @@ fire_hydrant;10.5361173;49.6231482;underground;yes
   Name it for example *hydranten.kml*
 * Execute following command from the directory where you downloaded the kml and jar files. Adapt the filename if necessary.  
   ```java -jar WasserkarteKml2Csv.jar hydranten.kml```
-* Look into the directory, there you should have a new files being *hydranten_<typ>.csv*
-
-This file you can in the next step upload as *Ebene* in FE2 (Webinterface > Objekte > Ebenen) or use to upload to openfiremap.
+* Look into the directory, there you should have a new files being *
+  * hydranten_alamos.csv
+  * hydranten_excel.csv
+  * hydranten_ofm.csv
 
 ### Restrictions
 
