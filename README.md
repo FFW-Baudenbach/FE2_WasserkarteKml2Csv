@@ -19,6 +19,9 @@ Convert a KML file, exported from [Wasserkarte.info](https://www.wasserkarte.inf
 Convert a KML file, exported from [Wasserkarte.info](https://www.wasserkarte.info/) to a CSV File which is compatible to OFM OpenFireMap (see [here](http://www.openfiremap.de/)).  
 This csv can be used to import the data in there using tools like [JOSM](https://josm.openstreetmap.de/).
 
+## Fireboard CSV
+Convert a KML file, exported from [Wasserkarte.info](https://www.wasserkarte.info/) to a CSV File which is compatible to FireBoard
+
 ## Example
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -67,11 +70,17 @@ Nr;Name;Typ
 101;Baudenbach, Feuerwehrhaus;Überflurhydrant
 122;Baudenbach, Feuerwehrhaus;Unterflurhydrant
 ```
-and openfiremap format
+... openfiremap format
 ```csv
 emergency;longitude;latitude;fire_hydrant:type;fire_hydrant:pressure
 fire_hydrant;10.5361927;49.6234328;pillar;yes
 fire_hydrant;10.5361173;49.6231482;underground;yes
+```
+... fireboard format
+```csv
+Name;Anmerkungen;Latitude;Longitude
+101;"Baudenbach, Feuerwehrhaus";49.6234328;10.5361927
+122;"Baudenbach, Feuerwehrhaus";49.6231482;10.5361173
 ```
 
 ### Usage

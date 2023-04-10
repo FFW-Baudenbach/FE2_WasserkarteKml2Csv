@@ -2,6 +2,7 @@ package WasserkarteKml2Csv;
 
 import WasserkarteKml2Csv.converter.AlamosConverter;
 import WasserkarteKml2Csv.converter.ExcelConverter;
+import WasserkarteKml2Csv.converter.FireBoardConverter;
 import WasserkarteKml2Csv.converter.OfmConverter;
 
 import java.io.*;
@@ -47,6 +48,11 @@ public class Main
             System.out.println("Generating OFM CSV...");
             content = OfmConverter.convertToOpenFireMapCsv(kml);
             fileName = inputFile.replaceAll("\\.kml", "_ofm.csv");
+            writeFile(fileName, content, StandardCharsets.UTF_8);
+
+            System.out.println("Generating FireBoard CSV...");
+            content = FireBoardConverter.convertToFireBoardCsv(kml);
+            fileName = inputFile.replaceAll("\\.kml", "_fb.csv");
             writeFile(fileName, content, StandardCharsets.UTF_8);
 
             System.out.println("DONE!");
