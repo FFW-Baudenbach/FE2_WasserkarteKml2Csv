@@ -51,7 +51,7 @@ public class ExcelConverterTests
 
         String expectedCsv =
                 "Nr;Name;Typ\n" +
-                        "101;Baudenbach, Feuerwehrhaus;Überflurhydrant\n" +
+                        "101;Baudenbach, Feuerwehrhaus;Oberflurhydrant\n" +
                         "122;Baudenbach, Feuerwehrhaus;Unterflurhydrant";
 
         Assertions.assertEquals(expectedCsv, csv);
