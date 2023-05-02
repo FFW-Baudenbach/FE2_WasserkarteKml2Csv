@@ -69,8 +69,8 @@ public class ExcelConverter {
                     if (desc.contains("Unterflurhydrant")) {
                         typ = "Unterflurhydrant";
                     }
-                    else if (desc.contains("Überflurhydrant")) {
-                        typ = "Überflurhydrant";
+                    else if (desc.contains("Überflurhydrant") || desc.contains("Oberflurhydrant")) {
+                        typ = "Oberflurhydrant";
                     }
                     else if (desc.contains("Löschwasserteich")) {
                         typ = "Löschwasserteich";

@@ -69,7 +69,7 @@ public class OfmConverter
                     if (desc.contains("Unterflurhydrant")) {
                         typ = "underground";
                     }
-                    else if (desc.contains("Überflurhydrant")) {
+                    else if (desc.contains("Überflurhydrant") || desc.contains("Oberflurhydrant")) {
                         typ = "pillar";
                     }
                     else if (desc.contains(("Löschwasserteich"))) {

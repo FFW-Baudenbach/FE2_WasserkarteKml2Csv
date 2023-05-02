@@ -58,7 +58,7 @@ public class AlamosConverter
                     if (desc.contains("Unterflurhydrant")) {
                         typ = "U";
                     }
-                    else if (desc.contains("Überflurhydrant")) {
+                    else if (desc.contains("Überflurhydrant") || desc.contains("Oberflurhydrant")) {
                         typ = "O";
                     }
                     else {
